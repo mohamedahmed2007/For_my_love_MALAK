@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malak's Coffee Corner ☕</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+
+  <!-- شريط التقدم -->
+  <div class="progress-bar">
+    <span class="progress-fill" id="progressFill"></span>
+  </div>
+
+  <!-- زر تغيير الوضع -->
+  <button class="theme-toggle" id="themeToggle" aria-label="تغيير الوضع">
+    <span id="themeIcon">☾</span>
+  </button>
+
+  <!-- ================= شاشة كلمة السر ================= -->
+  <section class="lock-screen" id="lockScreen">
+    <div class="particles" id="particles"></div>
+
+    <div class="lock-box">
+      <div class="steam-lock">
+        <span></span><span></span><span></span>
+      </div>
+
+      <h1 class="lock-title">ممنوع الدخول إلا لملوكتي ☕</h1>
+      <p class="lock-sub">فيه حاجة صغيرة معمولالك مخصوص، بس الأول أثبتي إنك ملك.</p>
+
+      <p class="lock-label">اكتبي كلمة السر يا ملك</p>
+
+      <form class="lock-form" id="lockForm" autocomplete="off">
+        <input
+          type="password"
+          id="passwordInput"
+          class="lock-input"
+          placeholder="•••••"
+          aria-label="كلمة السر"
+        />
+        <button type="submit" class="btn btn-primary">دخول</button>
+      </form>
+
+      <p class="lock-message" id="lockMessage"></p>
+    </div>
+  </section>
+
+  <!-- ================= المحتوى ================= -->
+  <main class="main" id="main">
+
+    <!-- 01 — الترحيب وفنجان القهوة -->
+    <section class="hero">
+      <div class="cup-wrap">
+        <div class="cup">
+          <div class="cup-steam"><span></span><span></span><span></span></div>
+          <div class="cup-body">
+            <div class="coffee-fill" id="coffeeFill"></div>
+          </div>
+          <div class="cup-handle"></div>
+          <div class="saucer"></div>
+        </div>
+      </div>
+
+      <h1 class="hero-title">Malak's Coffee Corner</h1>
+      <p class="hero-sub">A little world made just for you.</p>
+
+      <p class="hero-welcome">أهلًا بملوكتي ❤️</p>
+
+      <p class="hero-text">
+        النهارده مش يوم عادي، عشان إنتِ موجودة فيه.<br />
+        عملتلك ركن صغير شبه القهوة اللي بتحبيها،<br />
+        بس فيه حاجة أحلى من القهوة نفسها…<br />
+        كلام نفسي أقولهولك من قلبي.
+      </p>
+
+      <button class="btn btn-primary btn-big" id="startBtn">
+        ابدئي مفاجأتك يا ملك ☕
+      </button>
+    </section>
+
+    <!-- 02 — الرسالة -->
+    <section class="section letter-section" id="letterSection" data-reveal>
+      <div class="paper">
+        <h2 class="section-title paper-title">عاوز أقولك حاجة</h2>
+        <div class="letter-text" id="letterText"></div>
+      </div>
+    </section>
+
+    <!-- 03 — خمس حاجات -->
+    <section class="section cards-section" data-reveal>
+      <h2 class="section-title">5 حاجات بحبها فيكي</h2>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <!-- 04 — الجواب المخفي -->
+    <section class="section envelope-section" data-reveal>
+      <h2 class="section-title">جواب مخفي 💌</h2>
+
+      <div class="envelope-wrap">
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="افتحي الجواب">
+          <div class="env-back"></div>
+          <div class="env-letter">
+            <p>
+              لو الدنيا سألتني عن أحلى حاجة حصلتلي،<br />
+              هقول <strong>ملك</strong>.<br />
+              ولو سألوني تاني… هقول <strong>ملك</strong> برضه ❤️
+            </p>
+          </div>
+          <div class="env-front"></div>
+          <div class="env-flap"></div>
+          <div class="env-heart">❤</div>
+        </div>
+      </div>
+
+      <p class="hint" id="envHint">اضغطي على المظروف</p>
+    </section>
+
+    <!-- 05 — رسائل عشوائية -->
+    <section class="section random-section" data-reveal>
+      <h2 class="section-title">رسالة من ملوكتي المفضلة</h2>
+
+      <div class="random-box">
+        <p class="random-message" id="randomMessage">
+          اضغطي على الزر واقرئي رسالة لطيفة ✨
+        </p>
+        <button class="btn btn-primary" id="randomBtn">رسالة جديدة ✨</button>
+      </div>
+    </section>
+
+    <!-- 06 — فنجان القهوة الخاص بملك -->
+    <section class="section coffee-section" data-reveal>
+      <h2 class="section-title">فنجان القهوة الخاص بملك</h2>
+
+      <div class="mini-cup" id="miniCup">
+        <div class="mini-steam"><span></span><span></span><span></span></div>
+        <div class="mini-body"><div class="mini-fill" id="miniFill"></div></div>
+      </div>
+
+      <button class="btn btn-primary" id="coffeeBtn">حضّرتلك قهوتك ☕</button>
+      <p class="coffee-msg" id="coffeeMsg"></p>
+    </section>
+
+    <!-- 07 — النهاية -->
+    <section class="section ending-section" data-reveal id="endingSection">
+      <h2 class="ending-title">بحبك يا ملك</h2>
+      <p class="ending-sub">— من قلبي ليكي ❤️</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
